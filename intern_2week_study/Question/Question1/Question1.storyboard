@@ -40,39 +40,49 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="0PX-k5-h7v"/>
                                 </constraints>
-                                <state key="normal" title="Text Viewに追加"/>
+                                <state key="normal" title="追加"/>
                                 <connections>
                                     <action selector="addText:" destination="HOv-YH-dfQ" eventType="touchUpInside" id="gOP-gR-XKp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHX-9c-k0G">
-                                <rect key="frame" x="143.5" y="552" width="127" height="30"/>
-                                <state key="normal" title="Text Viewをクリア">
+                                <rect key="frame" x="184" y="552" width="46" height="30"/>
+                                <state key="normal" title="クリア">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="clearText:" destination="HOv-YH-dfQ" eventType="touchUpInside" id="tT2-bg-mRt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="文字を入力してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w28-Pb-EsZ">
+                                <rect key="frame" x="112" y="285" width="191" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="h1I-2B-V7f" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="5CN-E1-JLh"/>
+                            <constraint firstItem="w28-Pb-EsZ" firstAttribute="centerX" secondItem="mcD-4C-Lu1" secondAttribute="centerX" id="4NL-HL-ejQ"/>
+                            <constraint firstItem="h1I-2B-V7f" firstAttribute="centerX" secondItem="ymG-c6-NIW" secondAttribute="centerX" id="5CN-E1-JLh"/>
+                            <constraint firstItem="w28-Pb-EsZ" firstAttribute="leading" secondItem="ymG-c6-NIW" secondAttribute="leading" constant="112" id="7QW-5a-KxF"/>
                             <constraint firstItem="h1I-2B-V7f" firstAttribute="top" secondItem="mcD-4C-Lu1" secondAttribute="bottom" constant="40" id="7sh-Zw-yFY"/>
                             <constraint firstItem="mcD-4C-Lu1" firstAttribute="top" secondItem="SAC-3D-GIS" secondAttribute="bottom" constant="40" id="9S7-3c-cYn"/>
+                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="top" secondItem="w28-Pb-EsZ" secondAttribute="bottom" constant="8" id="Jg6-v0-yCG"/>
                             <constraint firstItem="hHX-9c-k0G" firstAttribute="top" secondItem="h1I-2B-V7f" secondAttribute="bottom" constant="40" id="Jt8-jr-6ue"/>
-                            <constraint firstItem="hHX-9c-k0G" firstAttribute="centerX" secondItem="tUl-ih-lXm" secondAttribute="centerX" id="NBc-xO-i6a"/>
-                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="a4S-bN-by9"/>
-                            <constraint firstItem="SAC-3D-GIS" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="l5m-Al-GqV"/>
+                            <constraint firstItem="hHX-9c-k0G" firstAttribute="centerX" secondItem="ymG-c6-NIW" secondAttribute="centerX" id="NBc-xO-i6a"/>
+                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="centerX" secondItem="ymG-c6-NIW" secondAttribute="centerX" id="a4S-bN-by9"/>
+                            <constraint firstItem="SAC-3D-GIS" firstAttribute="centerX" secondItem="ymG-c6-NIW" secondAttribute="centerX" id="l5m-Al-GqV"/>
                             <constraint firstItem="h1I-2B-V7f" firstAttribute="centerY" secondItem="AJf-tg-maZ" secondAttribute="centerY" id="qxP-vA-nDO"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="tUl-ih-lXm"/>
+                        <viewLayoutGuide key="safeArea" id="ymG-c6-NIW"/>
                     </view>
                     <connections>
                         <outlet property="addTextButton" destination="mcD-4C-Lu1" id="mCX-sP-Nbt"/>
                         <outlet property="clearTextButton" destination="hHX-9c-k0G" id="baO-2w-SfE"/>
                         <outlet property="textField" destination="SAC-3D-GIS" id="kBt-tg-yHt"/>
                         <outlet property="textView" destination="h1I-2B-V7f" id="dkf-fw-Acv"/>
+                        <outlet property="textWarning" destination="w28-Pb-EsZ" id="1ZD-as-wCA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nhm-ii-iwx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

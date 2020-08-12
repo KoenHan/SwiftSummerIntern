@@ -16,6 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Text View" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-2B-V7f">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="3cK-wX-M8f"/>
+                                    <constraint firstAttribute="width" constant="240" id="uho-Ff-ZhJ"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAC-3D-GIS">
                                 <rect key="frame" x="87" y="240" width="240" height="34"/>
                                 <constraints>
@@ -29,28 +40,28 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="0PX-k5-h7v"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Text Viewに追加"/>
                                 <connections>
                                     <action selector="addText:" destination="HOv-YH-dfQ" eventType="touchUpInside" id="gOP-gR-XKp"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Text View" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-2B-V7f">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="3cK-wX-M8f"/>
-                                    <constraint firstAttribute="width" constant="240" id="uho-Ff-ZhJ"/>
-                                </constraints>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHX-9c-k0G">
+                                <rect key="frame" x="143.5" y="552" width="127" height="30"/>
+                                <state key="normal" title="Text Viewをクリア">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearText:" destination="HOv-YH-dfQ" eventType="touchUpInside" id="tT2-bg-mRt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="h1I-2B-V7f" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="5CN-E1-JLh"/>
                             <constraint firstItem="h1I-2B-V7f" firstAttribute="top" secondItem="mcD-4C-Lu1" secondAttribute="bottom" constant="40" id="7sh-Zw-yFY"/>
                             <constraint firstItem="mcD-4C-Lu1" firstAttribute="top" secondItem="SAC-3D-GIS" secondAttribute="bottom" constant="40" id="9S7-3c-cYn"/>
+                            <constraint firstItem="hHX-9c-k0G" firstAttribute="top" secondItem="h1I-2B-V7f" secondAttribute="bottom" constant="40" id="Jt8-jr-6ue"/>
+                            <constraint firstItem="hHX-9c-k0G" firstAttribute="centerX" secondItem="tUl-ih-lXm" secondAttribute="centerX" id="NBc-xO-i6a"/>
                             <constraint firstItem="mcD-4C-Lu1" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="a4S-bN-by9"/>
                             <constraint firstItem="SAC-3D-GIS" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="l5m-Al-GqV"/>
                             <constraint firstItem="h1I-2B-V7f" firstAttribute="centerY" secondItem="AJf-tg-maZ" secondAttribute="centerY" id="qxP-vA-nDO"/>
@@ -59,6 +70,7 @@
                     </view>
                     <connections>
                         <outlet property="addTextButton" destination="mcD-4C-Lu1" id="mCX-sP-Nbt"/>
+                        <outlet property="clearTextButton" destination="hHX-9c-k0G" id="baO-2w-SfE"/>
                         <outlet property="textField" destination="SAC-3D-GIS" id="kBt-tg-yHt"/>
                         <outlet property="textView" destination="h1I-2B-V7f" id="dkf-fw-Acv"/>
                     </connections>

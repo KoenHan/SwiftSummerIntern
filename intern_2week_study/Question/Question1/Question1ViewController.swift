@@ -8,5 +8,15 @@ final class Question1ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.text = ""
+        textView.text = ""
+    }
+    
+    @IBAction func addText(_ sender: Any) {
+        guard let textFieldValue = textField.text else {
+            return
+        }
+        textView.text += textFieldValue + "\n"
+        textField.text = ""
     }
 }

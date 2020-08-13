@@ -6,26 +6,24 @@ final class Question1ViewController: UIViewController {
     @IBOutlet weak var addTextButton: UIButton!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var clearTextButton: UIButton!
-    @IBOutlet weak var textWarning: UILabel!
+    @IBOutlet weak var warningLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.text = ""
         textView.text = ""
-        textWarning.isHidden = true
+        warningLabel.isHidden = true
     }
     
     @IBAction func addText(_ sender: Any) {
-        guard let textFieldValue = textField.text else {
+        guard let inputText = textField.text else { return }
+        guard !inputText.isEmpty else {
+            warningLabel.isHidden = false
             return
         }
-        if textFieldValue == "" {
-            textWarning.isHidden = false
-        } else {
-            textWarning.isHidden = true
-            textView.text += textFieldValue + "\n"
-            textField.text = ""
-        }
+        warningLabel.isHidden = true
+        textView.text += inputText + "\n"
+        textField.text = ""
     }
     
     @IBAction func clearText(_ sender: Any) {

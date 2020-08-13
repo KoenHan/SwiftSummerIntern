@@ -43,3 +43,17 @@ extension Question2ViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension Question2ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      let alertController: UIAlertController = UIAlertController(
+                    title: areaTexts[indexPath.row],
+                    message: "今\(areaTexts[indexPath.row])を選びましたね．",
+                    preferredStyle: .alert)
+
+        let alertAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(alertAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+}

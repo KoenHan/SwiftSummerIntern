@@ -1,3 +1,4 @@
+import Nuke
 import UIKit
 
 final class Question2ViewController: UIViewController {
@@ -18,9 +19,12 @@ extension Question2ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+//        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        let cell: UITableViewCell = Question2Cell()
 
         cell.textLabel?.text = areaTexts[indexPath.row]
+        let url = URL(string: "https://www.irasutoya.com/2017/03/blog-post_72.html")!
+        Nuke.loadImage(with: url, into: cell.imageView!)
         return cell
     }
 }

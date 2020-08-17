@@ -22,11 +22,9 @@ final class SearchViewController: UIViewController {
                 switch result {
                 case .success(let articles):
                     self?.showSampleArticleListScreen(articles)
-                    
                 case .failure(let error):
                     let alert = UIAlertController.createErrorAlert(error)
                     self?.present(alert, animated: true)
-                    
                 }
                 self?.searchButton.isEnabled = true
             }

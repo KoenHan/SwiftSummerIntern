@@ -6,7 +6,7 @@ final class Question2ViewController: UIViewController {
     
     private let areaTexts: [String] = ["茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県"]
     
-    private let urls: [String] = [
+    private let areaImageUrlStrings: [String] = [
         "https://1.bp.blogspot.com/-xzTdHATFuvU/Xlyft6FdB2I/AAAAAAABXoY/-MCfnzSXVhkg0WDObHDVFbkvmUGVUoN0QCNcBGAsYHQ/s180-c/food_ra-men_lemon.png",
         "https://3.bp.blogspot.com/-ulAra8ZoOxY/WKbKazk0oQI/AAAAAAABB04/IWAtU-oO-h47by4cJC7I0GUloJRqtx2SQCLcB/s400/food_aburasoba.png",
         "https://1.bp.blogspot.com/-AC1sM6NFLDg/XkZc3TcZh8I/AAAAAAABXQs/bBqpyDU0FTMpN5094w5pBwenw3Q96s4mgCNcBGAsYHQ/s180-c/food_ramen_gekikara.png",
@@ -18,9 +18,7 @@ final class Question2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(
-            UINib(nibName: "Question2Cell", bundle: nil),
-            forCellReuseIdentifier: "question2Cell")
+        tableView.register(R.nib.question2Cell)
     }
 }
 
@@ -31,29 +29,27 @@ extension Question2ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: "question2Cell",
-            for: indexPath)
-            as? Question2Cell
-        else { return UITableViewCell() }
-
-        cell.setCellImage(
-            areaTexts[indexPath.row],
-            URL(string: urls[indexPath.row])!)
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.question2Cell, for: indexPath),
+            let name = areaTexts[safe: indexPath.row],
+            let url = URL(string: areaImageUrlStrings[indexPath.row])
+            else { return UITableViewCell() }
+        cell.setArea(name, url)
         return cell
     }
 }
 
 extension Question2ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let name = areaTexts[safe: indexPath.row] else { return }
         let alertController: UIAlertController = UIAlertController(
-                    title: areaTexts[indexPath.row],
-                    message: "今\(areaTexts[indexPath.row])を選びましたね．",
+                    title: name,
+                    message: "今\(name)を選びましたね．",
                     preferredStyle: .alert)
 
         let alertAction = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(alertAction)
         
-        present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true)
     }
 }

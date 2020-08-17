@@ -5,8 +5,8 @@ class Question2Cell: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var areaImageView: UIImageView!
     
-    func setCellImage(_ label: String, _ url: URL) {
-        self.label.text = label
-        Nuke.loadImage(with: url, into: areaImageView)
+    public func setArea(_ name: String, _ withImageURL: URL) {
+        self.label.text = name
+        Nuke.loadImage(with: withImageURL, into: areaImageView)
     }
 }

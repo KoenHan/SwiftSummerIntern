@@ -18,24 +18,23 @@ final class SearchViewController: UIViewController {
         guard let text = textField.text, !text.isEmpty else { return }
         
         APIClient.fetchArticles(keyword: text) { [weak self] result in
-            guard let self = self else { return }
+//            guard let self = self else { return }
             DispatchQueue.main.sync {
                 switch result {
                 case .success(let articles):
-                    self.showArticleListScreen(articles)
+                    self?.showArticleListScreen(articles)
                 case .failure(let error):
                     let alert = UIAlertController.createErrorAlert(error)
-                    self.present(alert, animated: true)
+                    self?.present(alert, animated: true)
                 }
-                self.searchButton.isEnabled = true
+                self?.searchButton.isEnabled = true
             }
         }
     }
 
     private func showArticleListScreen(_ articles: [Article]) {
-        print(articles)
-//        let articleListViewController = ArticleListViewController.makeInstance(articles)
-//        navigationController?.pushViewController(articleListViewController, animated: true)
+        let articleListViewController = ArticleListViewController.makeInstance(articles)
+        navigationController?.pushViewController(articleListViewController, animated: true)
     }
     
 }

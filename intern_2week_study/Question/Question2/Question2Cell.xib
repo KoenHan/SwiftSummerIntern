@@ -45,7 +45,7 @@
                 <outlet property="areaImageView" destination="0HI-IP-RCz" id="jX0-CT-Oj8"/>
                 <outlet property="label" destination="iS6-In-r7J" id="486-0j-1a1"/>
             </connections>
-            <point key="canvasLocation" x="121.73913043478262" y="99.776785714285708"/>
+            <point key="canvasLocation" x="-1017.3913043478261" y="112.5"/>
         </tableViewCell>
     </objects>
 </document>

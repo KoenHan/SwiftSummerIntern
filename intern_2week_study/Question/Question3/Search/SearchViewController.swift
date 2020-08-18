@@ -33,7 +33,7 @@ final class SearchViewController: UIViewController {
     }
 
     private func showArticleListScreen(_ articles: [Article]) {
-        let articleListViewController = ArticleListViewController.makeInstance(articles)
+        let articleListViewController = SampleArticleListViewController.makeInstance(articles)
         navigationController?.pushViewController(articleListViewController, animated: true)
     }
     

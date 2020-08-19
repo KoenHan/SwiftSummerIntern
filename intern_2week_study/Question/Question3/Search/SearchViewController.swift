@@ -12,6 +12,7 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         warningLabel.isHidden = true
+        setSearchButtonDesign()
     }
 
     private func searchArticles() {
@@ -42,6 +43,12 @@ final class SearchViewController: UIViewController {
     private func showArticleListScreen(_ articles: [Article]) {
         let articleListViewController = SampleArticleListViewController.makeInstance(articles)
         navigationController?.pushViewController(articleListViewController, animated: true)
+    }
+    
+    private func setSearchButtonDesign() {
+        searchButton.backgroundColor = UIColor(red: 0.2, green: 0.6, blue: 1.0, alpha: 1.0)
+        searchButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        searchButton.layer.cornerRadius = 10
     }
     
 }

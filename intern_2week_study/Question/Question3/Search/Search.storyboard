@@ -17,19 +17,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvA-pO-166">
-                                <rect key="frame" x="172" y="490" width="70" height="30"/>
+                                <rect key="frame" x="147" y="503" width="120" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="bH6-Vb-8gD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="検索"/>
                                 <connections>
                                     <action selector="searchButtonTapped:" destination="hE7-Bk-rHS" eventType="touchUpInside" id="oIw-uE-ZAE"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="キーワードを入力して検索" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CFg-PT-zyH">
-                                <rect key="frame" x="87" y="361" width="240" height="34"/>
+                                <rect key="frame" x="87" y="316" width="240" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文字を入力してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddR-C3-KPe">
-                                <rect key="frame" x="87" y="403" width="240" height="21"/>
+                                <rect key="frame" x="87" y="358" width="240" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -37,15 +41,15 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="CFg-PT-zyH" firstAttribute="top" secondItem="EnP-FA-CAh" secondAttribute="top" constant="317" id="Dlt-Ec-Tlc"/>
-                            <constraint firstItem="EnP-FA-CAh" firstAttribute="bottom" secondItem="QvA-pO-166" secondAttribute="bottom" constant="342" id="Gpv-BX-ve5"/>
-                            <constraint firstItem="ddR-C3-KPe" firstAttribute="leading" secondItem="CFg-PT-zyH" secondAttribute="leading" id="Kil-y7-f56"/>
-                            <constraint firstItem="ddR-C3-KPe" firstAttribute="top" secondItem="CFg-PT-zyH" secondAttribute="bottom" constant="8" id="OPZ-Hy-DrC"/>
-                            <constraint firstItem="CFg-PT-zyH" firstAttribute="centerX" secondItem="xlp-gX-m4Q" secondAttribute="centerX" id="X8i-sM-fZI"/>
-                            <constraint firstItem="CFg-PT-zyH" firstAttribute="centerX" secondItem="QvA-pO-166" secondAttribute="centerX" id="XJV-Yg-r7n"/>
-                            <constraint firstItem="CFg-PT-zyH" firstAttribute="leading" secondItem="EnP-FA-CAh" secondAttribute="leading" constant="87" id="cyL-lS-GxC"/>
-                            <constraint firstItem="ddR-C3-KPe" firstAttribute="trailing" secondItem="CFg-PT-zyH" secondAttribute="trailing" id="eKq-AV-ePb"/>
-                            <constraint firstItem="QvA-pO-166" firstAttribute="leading" secondItem="EnP-FA-CAh" secondAttribute="leading" constant="172" id="zgF-IW-jYv"/>
+                            <constraint firstItem="ddR-C3-KPe" firstAttribute="top" secondItem="CFg-PT-zyH" secondAttribute="bottom" constant="8" id="7Mm-ud-cBo"/>
+                            <constraint firstItem="CFg-PT-zyH" firstAttribute="centerX" secondItem="xlp-gX-m4Q" secondAttribute="centerX" id="9tT-Jz-m4a"/>
+                            <constraint firstItem="CFg-PT-zyH" firstAttribute="leading" secondItem="EnP-FA-CAh" secondAttribute="leading" constant="87" id="AEU-Fi-NdG"/>
+                            <constraint firstItem="ddR-C3-KPe" firstAttribute="centerX" secondItem="QvA-pO-166" secondAttribute="centerX" id="FYY-RZ-C8d"/>
+                            <constraint firstItem="EnP-FA-CAh" firstAttribute="bottom" secondItem="QvA-pO-166" secondAttribute="bottom" constant="314" id="VzA-Aa-Oqc"/>
+                            <constraint firstItem="CFg-PT-zyH" firstAttribute="top" secondItem="EnP-FA-CAh" secondAttribute="top" constant="272" id="gpV-FY-dua"/>
+                            <constraint firstItem="CFg-PT-zyH" firstAttribute="leading" secondItem="ddR-C3-KPe" secondAttribute="leading" id="kCL-Lp-oZn"/>
+                            <constraint firstItem="CFg-PT-zyH" firstAttribute="trailing" secondItem="ddR-C3-KPe" secondAttribute="trailing" id="oCq-i0-PPh"/>
+                            <constraint firstItem="QvA-pO-166" firstAttribute="leading" secondItem="EnP-FA-CAh" secondAttribute="leading" constant="147" id="v88-4d-r61"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EnP-FA-CAh"/>
                     </view>

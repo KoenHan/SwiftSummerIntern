@@ -283,10 +283,10 @@
 		5DF9154424EA2D6800AE7459 /* ArticleList */ = {
 			isa = PBXGroup;
 			children = (
+				5DFAAA1224EBB95C001F885A /* ArticleList.storyboard */,
+				5DF9154B24EA2F7300AE7459 /* ArticleListCell.swift */,
 				5DFAAA1424EBC157001F885A /* ArticleListCell.xib */,
 				5DF9154524EA2E1200AE7459 /* ArticleListViewController.swift */,
-				5DF9154B24EA2F7300AE7459 /* ArticleListCell.swift */,
-				5DFAAA1224EBB95C001F885A /* ArticleList.storyboard */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";

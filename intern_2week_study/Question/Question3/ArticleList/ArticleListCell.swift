@@ -5,7 +5,6 @@ class ArticleListCell: UITableViewCell {
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var titleTextLabel: UILabel!
     @IBOutlet weak var userNameTextLabel: UILabel!
-//    @IBOutlet weak var lgtmTextLabel: UILabel!
     @IBOutlet weak var tagsTextLabel: UILabel!
     
     public func setArea(_ article: Article) {

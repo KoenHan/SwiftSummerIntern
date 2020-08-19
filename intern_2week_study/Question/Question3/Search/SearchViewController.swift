@@ -15,6 +15,7 @@ final class SearchViewController: UIViewController {
     }
 
     private func searchArticles() {
+        warningLabel.isHidden = true
         searchButton.isEnabled = false
         
         guard let text = textField.text, !text.isEmpty else {

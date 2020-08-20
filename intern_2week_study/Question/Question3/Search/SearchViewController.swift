@@ -12,6 +12,7 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         warningLabel.isHidden = true
+        textField.delegate = self
         setSearchButtonDesign()
     }
 
@@ -65,6 +66,12 @@ final class SearchViewController: UIViewController {
     
     @IBAction func releaseSearchButton(_ sender: Any) {
         setSearchButtonDesign()
-        
+    }
+}
+
+extension SearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

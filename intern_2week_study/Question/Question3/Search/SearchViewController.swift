@@ -4,6 +4,7 @@ final class SearchViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var warningLabel: UILabel!
+    @IBOutlet var keyboardCloseGesture: UITapGestureRecognizer!
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         searchArticles()
@@ -67,9 +68,21 @@ final class SearchViewController: UIViewController {
     @IBAction func releaseSearchButton(_ sender: Any) {
         setSearchButtonDesign()
     }
+
+    @IBAction func closeKeyboard(sender: AnyObject) {
+        self.textField.resignFirstResponder()
+    }
 }
 
 extension SearchViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.keyboardCloseGesture.isEnabled = true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.keyboardCloseGesture.isEnabled = false
+    }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
